@@ -1,59 +1,51 @@
 # CSVSplitter
 
-`CSVSplitter`는 큰 CSV 파일을 사용자가 지정한 행 수에 따라 여러 개의 작은 CSV 파일로 분할할 수 있는 Python 도구입니다. 대용량 데이터를 효율적으로 처리하고, 필요한 만큼의 데이터를 나누어 관리할 수 있습니다.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=fff&labelColor=grey&color=yellowgreen)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/WoongyuChoi/CSVSplitter/blob/main/LICENSE)
+![Platform](https://img.shields.io/badge/platform-desktop-blue)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/WoongyuChoi/CSVSplitter)
 
-## 주요 기능
-- **대용량 CSV 파일 분할**: 사용자가 입력한 행 수에 따라 큰 CSV 파일을 작은 파일로 나눕니다.
-- **유연한 분할 설정**: 분할할 행 수를 자유롭게 지정할 수 있으며, 기본값으로 10,000 행이 설정되어 있습니다.
-- **헤더 유지**: 분할된 모든 CSV 파일은 원본 파일과 동일한 헤더를 유지합니다.
+<figure align="center">
+    <img src="https://github.com/user-attachments/assets/4ac602f0-2503-4898-a337-c072372e65f6" width="80%"/>
+</figure>
 
-## 설치 방법
+## Overview
 
-### 필수 패키지 설치
-`CSVSplitter`는 `pandas` 라이브러리에 의존합니다. `requirements.txt` 파일에 명시된 패키지를 설치하세요:
+**CSVSplitter** is a Python-based tool for splitting large CSV files into smaller, manageable chunks based on a specified number of rows. This utility is designed to handle large datasets efficiently, enabling users to break down files as needed.
 
+## Features
+
+- **Large CSV File Splitting**: Splits large CSV files into smaller files based on a specified number of rows.
+- **Flexible Row Setting**: Customize the row count for each split file; the default setting is 10,000 rows.
+- **Header Preservation**: All split files retain the original CSV file's header row.
+
+## Setup
+
+### Install Required Packages
+
+CSVSplitter relies on the pandas library. Make sure to install the dependencies listed in the `equirements.txt` file:
 ```bash
 pip install -r requirements.txt
 ```
+## Usage
 
-## 사용 방법
-
-1. 터미널(또는 명령 프롬프트)에서 `csv_splitter.py` 파일을 실행하세요:
-
+1. Run `csv_splitter.py` in the terminal or command prompt:
    ```bash
    python csv_splitter.py
    ```
 
-2. 분할할 CSV 파일의 이름을 입력하세요. 예를 들어, `sample.csv` 파일을 분할하려면 `sample`을 입력하세요.
+2. Enter the name of the CSV file you want to split (without the file extension). For example, to split `sample.csv`, just type `sample`.
 
-3. 파일을 나눌 행 수를 입력하세요. 기본값은 10,000 행입니다. 예를 들어, `2000`을 입력하면, 각 파일에 최대 2,000개의 행이 포함됩니다.
+3. Specify the number of rows per split file. The default value is 10,000 rows. For example, enter `2000` if you want each file to contain up to 2,000 rows.
 
-### 예제
+## Example
 
-`sample.csv` 파일을 1,000 행씩 나누고 싶다면, 다음과 같이 실행합니다:
-
+To split `sample.csv` into files of 1,000 rows each:
 ```bash
 python csv_splitter.py
 ```
 
-- `분할할 CSV 파일의 이름을 입력하세요 (확장자 제외): sample`
-- `파일을 나눌 행 수를 입력하세요 (기본값: 10,000): 1000`
+## License
 
-이 명령은 `sample_1.csv`, `sample_2.csv`, ... 파일들을 생성합니다.
+This project is licensed under the MIT License.
 
-## 예제 파일
-- `sample.csv` 파일을 포함하여, 이 도구를 테스트할 수 있습니다.
-
-## PyInstaller를 사용한 실행 파일 생성
-
-이 프로젝트는 PyInstaller를 사용하여 실행 파일로 패키징할 수 있습니다. 실행 파일을 만들려면:
-
-```bash
-pyinstaller --onefile csv_splitter.spec
-```
-
-생성된 실행 파일은 Python이 설치되지 않은 시스템에서도 사용할 수 있습니다.
-
-## 라이선스
-
-이 프로젝트는 [MIT 라이선스](LICENSE)를 따릅니다.
